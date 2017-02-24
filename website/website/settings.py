@@ -126,3 +126,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIR = [
     os.path.join(PROJECT_ROOT, 'static'),
 ]
+
+TEMPLATES_DIRS = [
+    os.path.join(BASE_DIR, 'templates')
+]

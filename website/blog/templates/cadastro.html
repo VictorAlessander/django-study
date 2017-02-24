@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Cadastro</title>
+</head>
+<body>
+
+	<form action="/cadastro/" method="post">
+		{% csrf_token %}
+		{{form.as_ul}}
+		<input type="submit" name="Submit"/>
+	</form>
+
+</body>
+</html>
