@@ -1,6 +1,12 @@
 from django import forms
+from .models import Cadastro
 
 
-class CadastroForm(forms.Form):
+class CadastroForm(forms.ModelForm):
 
-	your_name = forms.CharField(label='Name')
+	class Meta:
+		model = Cadastro
+		fields = ('name', 'email', 'username', 'password')
+		widgets = {
+			'password': forms.PasswordInput(),
+		}
