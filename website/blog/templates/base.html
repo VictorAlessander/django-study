@@ -53,8 +53,8 @@
           {% else %}
 
           <nav class="blog-nav navbar-right">
-            <a class="blog-nav-item" href="#">Entrar</a>
-            <a class="blog-nav-item" href="#">Cadastrar</a>
+            <a class="blog-nav-item" href="{% url 'blog:entrar' %}">Entrar</a>
+            <a class="blog-nav-item" href="{% url 'blog:cadastro' %}">Cadastrar</a>
           </nav>
           {% endif %}
         </nav>
