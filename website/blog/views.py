@@ -22,3 +22,8 @@ def cadastro(request):
 		form = CadastroForm()
 
 	return render(request, 'cadastro.html', {'form': form})
+
+
+def entrar(request):
+
+	return render(request, 'entrar.html', {})
