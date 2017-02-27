@@ -46,8 +46,8 @@
 
           {% if user.is_authenticated %}
           <nav class="blog-nav navbar-right">
-            <a class="blog-nav-item" href="#">Olá, {{user.name}}</a>
-            <a class="blog-nav-item" href="#">Logout</a>
+            <a class="blog-nav-item" href="#">{{user}}</a>
+            <a class="blog-nav-item" href="{% url 'blog:sair' %}">Logout</a>
           </nav>
 
           {% else %}
