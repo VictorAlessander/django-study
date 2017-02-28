@@ -39,12 +39,10 @@
       <div class="container">
         <nav class="blog-nav">
           <a class="blog-nav-item active" href="{% url 'blog:index' %}">Home</a>
-          <a class="blog-nav-item" href="#">New features</a>
-          <a class="blog-nav-item" href="#">Press</a>
-          <a class="blog-nav-item" href="#">New hires</a>
           <a class="blog-nav-item" href="#">About</a>
 
           {% if user.is_authenticated %}
+          <a class="blog-nav-item" href="{% url 'blog:novo_post' %}">Novo Post</a>
           <nav class="blog-nav navbar-right">
             <a class="blog-nav-item" href="#">{{user}}</a>
             <a class="blog-nav-item" href="{% url 'blog:sair' %}">Logout</a>
