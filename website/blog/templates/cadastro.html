@@ -6,7 +6,7 @@
 
 <div class="container" style="margin-top: 50px; width: 500px;">
   <h2 align="center">Cadastro</h2>
-  <form action="{% url 'blog:index' %}" method="post">
+  <form method="post">
     {% csrf_token %}
 
     {% for field in form %}
