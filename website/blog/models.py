@@ -1,12 +1,23 @@
 from django.db import models
-
+from django.utils import timezone
 
 # Create your models here.
 
 
-#class Cadastro(models.Model):
+class Post(models.Model):
 
-#	name = models.CharField(max_length=100)
-#	email = models.EmailField(max_length=100)
-#	username = models.CharField(max_length=40)
-#	password = models.CharField(max_length=50)
+	author = models.ForeignKey('auth.User')
+	title = models.CharField(max_length=200)
+	text = models.TextField()
+	date_created = models.DateTimeField(
+					default=timezone.now)
+	date_modified = models.DateTimeField(
+					blank=True, null=True)
+
+
+	def publicar(self):
+		self.date_modified = timezone.now()
+		self.save()
+
+	def __str__(self):
+		return self.title
