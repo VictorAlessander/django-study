@@ -44,3 +44,8 @@ def novo_post(request):
 		form_post = PostForm()
 
 	return render(request, 'novo_post.html', {'form_post': form_post})
+
+
+def visualizar_post(request, id):
+	post_id = Post.objects.filter(id=id)
+	return render(request, 'visualizar_post.html', {'posts': post_id})
