@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
 from .forms import PostForm
 from .models import Post
 from django.contrib.auth.forms import UserCreationForm
 from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -27,11 +27,7 @@ def cadastro(request):
 	return render(request, 'cadastro.html', {'form': form})
 
 
-def entrar(request):
-
-	return render(request, 'entrar.html', {})
-
-
+@login_required()
 def novo_post(request):
 
 	if request.method == 'POST':
