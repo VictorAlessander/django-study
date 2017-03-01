@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+{% for post in posts %}
+<div class="container" style="margin-top: 50px; margin-bottom: 20px;">
+	<div class="blog-main">
+		<h1>{{post.title}}</h1>
+		<time>{{post.date_created|date}}</time>
+
+		<p style="margin-top: 50px;">{{post.text|linebreaks}}</p>
+	</div>
+</div>
+{% endfor %}
+
+{% endblock %}
