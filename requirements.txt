@@ -4,5 +4,4 @@ gunicorn==19.6.0
 whitenoise==3.2.2
 django-widget-tweaks
 psycopg2
-mysqlclient
 Pillow
