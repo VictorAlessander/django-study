@@ -15,7 +15,7 @@
         <div class="col-sm-8 blog-main">
           {% for post in lista_posts %}
           <div class="blog-post">
-            <h2 class="blog-post-title"><a href='#'>{{post.title|linebreaks}}</a></h2>
+            <h2 class="blog-post-title"><a href="{% url 'blog:post' post.id %}">{{post.title|linebreaks}}</a></h2>
             <p class="blog-post-meta">{{post.date_created|date}}, {{post.author}}</p>
           </div><!-- /.blog-post -->
           {% endfor %}
