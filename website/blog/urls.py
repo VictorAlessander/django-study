@@ -10,4 +10,5 @@ urlpatterns = [
 	url(r'^entrar/', login, name='entrar', kwargs={'template_name': 'entrar.html'}),
 	url(r'^sair/', logout, name='sair', kwargs={'next_page': '/'}),
 	url(r'^novo_post/', views.novo_post, name='novo_post'),
+	url(r'^posts/(?P<id>\d+)/', views.visualizar_post, name='post'),
 ]
