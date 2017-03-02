@@ -14,6 +14,11 @@
       <label for="{{field.id_for_label}}">{{field.label}}</label>
         {{field|add_class:'form-control'}}
     </div>
+      
+      {% for error in field.errors %}
+        <span class='help-block'>{{error}}</span>
+      {% endfor %}
+    
     {% endfor %}
     <div class="submit" align="center" style="margin-bottom: 50px;">
       <button type="submit" class="btn btn-success">Enviar</button>
