@@ -14,13 +14,19 @@
   		<label for="{{field.id_for_label}}">{{field.label}}</label>
   			{{field|add_class:'form-control'}}
   	</div>
+
   	{% endfor %}
+
+    {% for error in form.non_field_errors %}
+      <div class="alert alert-danger">
+        <strong>{{ error|escape }}</strong>
+      </div>
+    {% endfor %}
 
     <div class="submit" align="center" style="margin-bottom: 50px;">
       <button type="submit" class="btn btn-success">Enviar</button>
     </div>
   </form>
 </div>
-
 
 {% endblock %}
