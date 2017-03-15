@@ -8,6 +8,8 @@
 	<div class="blog-main">
 		<h1>{{post.title}}</h1>
 		<time>{{post.date_created|date}}</time>
+		<a class="btn btn-default" href="{% url 'blog:editar_post' id=post.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+		<a class="btn btn-default" href="{% url 'blog:remover_post' id=post.id %}"><span class="glyphicon glyphicon-remove"></span></a>
 
 		<p style="margin-top: 50px;">{{post.text|linebreaks}}</p>
 	</div>
