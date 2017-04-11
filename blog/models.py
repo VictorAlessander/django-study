@@ -13,7 +13,7 @@ class Post(models.Model):
 					default=timezone.now)
 	date_modified = models.DateTimeField(
 					blank=True, null=True)
-	image = models.ImageField(upload_to='blog', null=True)
+	image = models.ImageField(upload_to='blog', null=True, blank=True)
 
 
 	def publicar(self):
