@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
+from django.http import HttpResponseRedirect
 #from django.http import JsonResponse  # Exemplo de retorno em Json
 
 # Create your views here.
@@ -40,7 +41,7 @@ def novo_post(request):
 			post.author = request.user
 			post.date_created = timezone.now()
 			post.save()
-			return redirect('/')
+			return HttpResponseRedirect('/')
 
 	else:
 		form_post = PostForm()
