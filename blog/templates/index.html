@@ -16,7 +16,9 @@
           <div class="blog-post">
             <h2 class="blog-post-title"><a href="{% url 'blog:post' post.id %}">{{post.title|linebreaks}}</a></h2>
             <p class="blog-post-meta">{{post.date_created|date}}, {{post.author}}</p>
+            {% if post.image %}
             <img src="{{post.image.url}}" style="width: 600px;">
+            {% endif %}
           </div><!-- /.blog-post -->
           {% endfor %}
 
